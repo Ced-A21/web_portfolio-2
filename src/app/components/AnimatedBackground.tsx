@@ -26,7 +26,7 @@ export default function AnimatedBackground() {
       };
 
       p.draw = () => {
-        p.background("#262626");
+        p.clear();
         p.stroke(255, 255, 255, 127); // White with 50% opacity
         p.strokeWeight(1);
         p.noFill();
@@ -80,6 +80,7 @@ export default function AnimatedBackground() {
         width: "100%",
         height: "100%",
         zIndex: -1,
+        animation: "fadeIn 7s ease-in forwards",
       }}
     />
   );

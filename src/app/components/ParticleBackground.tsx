@@ -29,7 +29,7 @@ export default function ParticleBackground() {
     const createParticles = () => {
       particlesRef.current = [];
       const area = window.innerWidth * window.innerHeight;
-      const particleCount = Math.floor(area / 60000);
+      const particleCount = Math.floor(area / 120000);
 
       for (let i = 0; i < particleCount; i++) {
         particlesRef.current.push({
