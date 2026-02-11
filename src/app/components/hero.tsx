@@ -1,43 +1,15 @@
 "use client";
 
-const skills = [
-  {
-    category: "Frontend",
-    items: [
-      "React.js",
-      "Next.js",
-      "Angular.js",
-      "Typescript",
-      "Javascript",
-      "TailwindCSS",
-      "SCSS",
-      "Vite",
-    ],
-  },
-  {
-    category: "Backend",
-    items: [
-      "Node.js",
-      ".NET",
-      "Python",
-      "MySQL",
-      "AzureSQL",
-      "MSSql",
-      "RestAPI",
-      "JWT",
-    ],
-  },
-  {
-    category: "DevOps & Version Control",
-    items: ["Azure", "Docker"],
-  },
-  {
-    category: "Developer Tools",
-    items: ["Github", "Git", "VS Code", "Visual Studio"],
-  },
-];
+type Skill = {
+  category: string;
+  techs: string[];
+};
 
-const Hero: React.FC = () => {
+type skillProps = {
+  skills: Skill[];
+};
+
+const Hero: React.FC<skillProps> = ({ skills }) => {
   return (
     <div className="px-4 md:px-0 pt-8 flex w-full max-w-2xl column ">
       <h1>Christian Cedrick Alon</h1>
@@ -69,9 +41,9 @@ const Hero: React.FC = () => {
             <div key={sc.category}>
               <h2>{sc.category}</h2>
               <div className="flex flex-wrap gap-2">
-                {sc.items.map((item) => (
-                  <p key={item} className="opacity-50 text-white px-3 py-1">
-                    {item}
+                {sc.techs.map((tech) => (
+                  <p key={tech} className="opacity-50 text-white px-3 py-1">
+                    {tech}
                   </p>
                 ))}
               </div>
