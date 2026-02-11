@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-space-mono: 'Space Mono', monospace;
+  
+}
+
+@layer utilities{
+
+
+  .navbar-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .row{
+    display:flex;
+    flex-direction: row;
+  }
+
+  .column{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pointer{
+    cursor: pointer;
+  }
+
+  .lift {
+    display: inline-block;     
+    position: relative;         
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .lift:hover{
+    transform: translateY(-4px);
+  }
+
+  .lift::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;               /* Thickness of underline */
+    background-color: currentColor; /* Matches text color */
+    transition: width 0.2s ease;
+  }
+
+  .lift:hover::after {
+    width: 100%;
+  }
+
+  .header-color{
+    background-color: #262626;
+  }
+
+}
+
+*{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+
+}
+
+body {
+
+  margin: 0;
+  overflow-x: hidden;
+  background: #262626;
+}
+
+p{
+  font-size: 14px;
+  font-weight: 400;
+  color: #FFFF;
+}
+
+h1{
+  font-size: 40px;
+  font-weight: 700;
+  color: #FFFF;
+}
+
+h2{
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFF;
+}
+
