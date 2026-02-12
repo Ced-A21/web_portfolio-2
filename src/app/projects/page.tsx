@@ -18,7 +18,7 @@ const projects = [
     title: "Web Porfolio",
     description: "First web portfolio website I created",
     techStack: ["React.js", "TailwindCSS"],
-    link: "https://ced-alon.vercel.app/",
+    link: "https://ced-alon-old.vercel.app/",
   },
   {
     title: "Glimpse",
