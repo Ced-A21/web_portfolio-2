@@ -142,4 +142,12 @@
     background-color: var(--color-text);
     transition: background-color 0.3s ease;
   }
+
+  .theme-icon {
+    transition: filter 0.3s ease;
+  }
+
+  [data-theme="light"] .theme-icon {
+    filter: brightness(0);
+  }
 }

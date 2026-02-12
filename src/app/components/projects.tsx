@@ -29,7 +29,7 @@ const Projects: React.FC<projectProps> = ({ projects }) => {
                   rel="noopener noreferrer"
                 >
                   <Image
-                    className="pointer lift"
+                    className="pointer lift theme-icon"
                     src={LinkIcon}
                     alt="External Link"
                     width={21}
