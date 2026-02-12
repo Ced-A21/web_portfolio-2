@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -13,6 +14,12 @@ export default function ParticleBackground() {
       radius: number;
     }>
   >([]);
+  const { isDark } = useTheme();
+  const isDarkRef = useRef(isDark);
+
+  useEffect(() => {
+    isDarkRef.current = isDark;
+  }, [isDark]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -50,7 +57,7 @@ export default function ParticleBackground() {
     function animate() {
       if (!ctx || !canvas) return;
 
-      ctx.fillStyle = "#262626";
+      ctx.fillStyle = isDarkRef.current ? "#262626" : "#f2f5e8";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       particlesRef.current.forEach((particle) => {
@@ -62,7 +69,9 @@ export default function ParticleBackground() {
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
 
-        ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+        ctx.fillStyle = isDarkRef.current
+          ? "rgba(255, 255, 255, 0.5)"
+          : "rgba(10, 10, 10, 0.3)";
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
         ctx.fill();
@@ -75,7 +84,7 @@ export default function ParticleBackground() {
 
     const handleResize = () => {
       setCanvasSize();
-      createParticles(); // Recreate particles to fill new area
+      createParticles();
     };
 
     window.addEventListener("resize", handleResize);
@@ -96,7 +105,6 @@ export default function ParticleBackground() {
         width: "100%",
         height: "100%",
         zIndex: -1,
-        background: "#262626",
       }}
     />
   );
