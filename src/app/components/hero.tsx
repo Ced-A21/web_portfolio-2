@@ -42,7 +42,7 @@ const Hero: React.FC<skillProps> = ({ skills }) => {
               <h2>{sc.category}</h2>
               <div className="flex flex-wrap gap-2">
                 {sc.techs.map((tech) => (
-                  <p key={tech} className="opacity-50 text-white px-3 py-1">
+                  <p key={tech} className="opacity-50 px-3 py-1">
                     {tech}
                   </p>
                 ))}

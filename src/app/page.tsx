@@ -52,22 +52,12 @@ const exp = [
 export default function Home() {
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 header-color`}>
-        <Nav />
-      </header>
-      <main className={`p-2`}>
-        <section
-          className={`flex justify-center md:w-full pt-[12vh] md:pt-[9.11vh]`}
-        >
-          <Hero skills={skills} />
-        </section>
-        <section className={`flex justify-center md: w-full`}>
-          <Experience experience={exp} />
-        </section>
-        <footer className={`flex justify-center md:w-full pt-20`}>
-          <Footer />
-        </footer>
-      </main>
+      <section className="flex justify-center w-full p-2">
+        <Hero skills={skills} />
+      </section>
+      <section className="flex justify-center w-full p-2 pt-8">
+        <Experience experience={exp} />
+      </section>
     </>
   );
 }

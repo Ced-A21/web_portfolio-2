@@ -15,7 +15,7 @@ const Experience: React.FC<ExpProps> = ({ experience }) => {
       className={`px-4 py-6 md:px-0 min-h-[9vh] pt-8 flex w-full max-w-2xl column`}
     >
       <h1>Experience</h1>
-      <div className={`md:flex py-4 border-l border-white`}>
+      <div className="md:flex py-4 theme-border-l">
         <div className={`px-4 md:ml-6 space-y-6`}>
           {experience.map((exp) => (
             <div key={exp.role}>
@@ -23,8 +23,8 @@ const Experience: React.FC<ExpProps> = ({ experience }) => {
               <p>{exp.company}</p>
               <p>August 2024 - Present</p>
               <div className={`row pt-4 gap-2 items-center justify-center`}>
-                <span className={`text-white`}>Tech Stack:</span>
-                <div className="flex flex-wrap gap-2 text-white">
+                <span>Tech Stack:</span>
+                <div className="flex flex-wrap gap-2">
                   {exp.techStack.map((tech, index) => (
                     <span key={index}>{tech}</span>
                   ))}

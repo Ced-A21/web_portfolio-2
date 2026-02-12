@@ -3,6 +3,9 @@ import { Space_Mono } from "next/font/google";
 import "./styles/globals.css";
 import AnimatedBackground from "./components/AnimatedBackground";
 import ParticleBackground from "./components/ParticleBackground";
+import Nav from "./components/nav";
+import Footer from "./components/footer";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const spaceMono = Space_Mono({
   variable: "--font-space-mono",
@@ -22,15 +25,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${spaceMono.variable} ${spaceMono.variable} antialiased`}
-      >
-        <div className="fixed inset-0 -z-10">
-          <ParticleBackground />
-        </div>
-        <main className="font-space-mono relative z-10 min-h-screen">
-          {children}
-        </main>
+      <body className={`${spaceMono.variable} antialiased font-mono`}>
+        <ThemeProvider>
+          <div className="fixed inset-0 -z-10 pointer-events-none">
+            <ParticleBackground />
+            <AnimatedBackground />
+          </div>
+          <div className="relative z-10 min-h-screen flex flex-col">
+            <header className="fixed top-0 left-0 right-0 z-50 header-color">
+              <Nav />
+            </header>
+
+            <main className="flex-1 pt-[80px]">{children}</main>
+            <footer className="mt-auto flex justify-center w-full pt-20 pb-2">
+              <Footer />
+            </footer>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
