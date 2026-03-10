@@ -29,6 +29,7 @@ const skills = [
       "MSSql",
       "RestAPI",
       "JWT",
+      "Supabase",
     ],
   },
   {
@@ -37,7 +38,11 @@ const skills = [
   },
   {
     category: "Developer Tools",
-    techs: ["Github", "Git", "VS Code", "Visual Studio"],
+    techs: ["Github", "Git", "VS Code", "Visual Studio", "Nginx", "Shopify"],
+  },
+  {
+    category: "Automation",
+    techs: ["n8n"],
   },
 ];
 
